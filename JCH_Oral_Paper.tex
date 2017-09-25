@@ -19,7 +19,6 @@
 \usepackage[margin=1in]{geometry}
 \newcommand\makebetter[1]{\textcolor{red}{\textbf{TODO:}} {#1}}
 \begin{document}
-\begin{fmffile}{fd}
 
 \begin{center}
     \huge Search for Light Dark Matter at the LHC 
@@ -27,25 +26,27 @@
 \begin{center}
     \large Joshua C. Hiltbrand
 \end{center}
+\begin{center}
+    \small \today
+\end{center}
 \linenumbers
 
 \section{Introduction}
 
-    One of the long, outstanding problems in physics is that seemingly a
-    majority of the universe is composed of non-baryonic, dark matter and dark
-    energy. Evidence for this dark matter and dark energy is well established;
-    in the discrepant rotation velocity curves of stars around galactic centers
-    and the inferred mass through gravitational lensing observation as well as
-    others. Yet, the properties of dark matter and dark energy are not very well
-    understood beyond their gravitational interactions. The particle nature of
-    dark matter and its mass are still unconstrained and models with different
-    mass ranges abound. One of the possible mass ranges is that of the WIMPs
-    which would have a mass on the order of the $W$ or $Z$ boson and greater.
-    However, there is another mass regime of increasing interest, LDM or light
-    dark matter which has a sub-GeV mass. Within this lighter mass range the
-    model of interest to this paper introduces a new light force with a
-    corresponding mediator, $A'$, that kinetically mixes with the standard model
-    photon.
+    A long, outstanding problems in physics is that seemingly a majority of the
+    universe is composed of non-baryonic, dark matter and dark energy. Evidence
+    for this dark matter and dark energy is well established; in the discrepant
+    rotation velocity curves of stars around galactic centers and the inferred
+    mass through gravitational lensing observation, as well as others. Yet, the
+    properties of dark matter and dark energy are not very well understood
+    beyond their gravitational interactions. The particle nature of dark matter
+    and its mass are still unconstrained and models with different mass ranges
+    abound. One of the possible mass ranges is that of the WIMPs which would
+    have a mass on the order of the $W$ or $Z$ boson and greater.  However,
+    there is another mass regime of increasing interest, LDM or light dark
+    matter which has a sub-GeV mass. Within this lighter mass range the model of
+    interest to this paper introduces a new light force with a corresponding
+    mediator, $A'$, that kinetically mixes with the standard model photon.
 
     A possible method of detecting light dark matter candidates under such a
     model is by explicitly producing them via a ``dark bremsstrahlung'' process.
@@ -135,6 +136,7 @@
         \begin{figure}[ht]
             \centering
                 \subfloat[$m_{A'} < m_{\chi}$]{
+                    \begin{fmffile}{kineticMixing1}
                     \begin{fmfgraph*}(150,80)
 
                         \fmfstraight
@@ -156,9 +158,11 @@
                         \fmffreeze
                         
                     \end{fmfgraph*}
+                    \end{fmffile}
                 }
                 \qquad \qquad
                 \subfloat[$m_{A'} > m_{\chi}$]{
+                    \begin{fmffile}{kineticMixing2}
                     \begin{fmfgraph*}(150,80)
                         \fmfcmd{
                             path quadrant, q[], otimes;
@@ -187,6 +191,7 @@
                         \fmflabel{$\bm{g}$}{v2}
 
                     \end{fmfgraph*}
+                    \end{fmffile}
                 }
             \\
             \caption{The dark sector couples to the standard model through a
@@ -209,6 +214,7 @@
         
         \begin{figure}[ht]
             \centering
+                \begin{fmffile}{darkBrem}
                 \begin{fmfgraph*}(200,100)
 
                     \fmfstraight
@@ -239,6 +245,7 @@
                     \fmflabel{$l$}{t6}
 
                 \end{fmfgraph*}
+                \end{fmffile}
             \caption{A lepton undergoes dark bremsstrahlung whereby a
             massive mediator, $A'$, is radiated and produces light dark matter
             particles. The dark photon can be off-shell.}
@@ -288,11 +295,11 @@
 
     \begin{figure}[ht]
         \begin{center}
-            \includegraphics[width=0.9\linewidth]{CMS_Detector_Cutaway.png}
+            \includegraphics[width=0.9\linewidth]{Figures/CMS_Detector_Cutaway.png}
         \end{center}
         \caption{A three-quarter cutaway view of the CMS detector showing the
         concentricity of the various subdetectors and other
-        components.\cite{CMSCutaway}}
+        components making up the device.\cite{CMSCutaway}}
         \label{fig:cms}
     \end{figure}
     
@@ -360,7 +367,7 @@
         tracker to the muon chamber) and will be lost. A candidate signal event
         has a track in the silicon tracker which is missing outer hits and has
         no corresponding global muon to match to it. In the direction of the
-        track before the interaction point, there should also be little to no
+        track before the interaction point, there should also be little
         activity in the calorimeters as the dark matter takes incident momentum
         energy away undetected.
 
@@ -371,23 +378,23 @@
         there to be at least one reconstructed muon in the event with a
         transverse momentum of $p_{T} \gtrsim 25$~GeV.  Following this selection
         by the trigger a recommended variety of cuts are applied to the
-        triggering muons. A definite requirement of $p_{T} > 26$~GeV is applied
-        along with $|\eta| < 2.1$. The triggering muon is also required to meet
-        a tight ID requirement which demands a high-quality reconstructed track
-        and a global track fit with a $\chi^2$ fit requirement. Similarly, a
-        simple acceptance selection is also applied to the tracks in an event.
-        Here we require $p_{T} > 26$~GeV and $|\eta| < 2.1$. The pseudorapidity
-        requirements ensure that the muons (tracks) are within good acceptance
-        of the inner tracking system.  Lastly, all muon-track pairs must be
-        within a standard invariant mass range around the $Z$ boson. We call
-        for the invariant mass to be in the range $60 < m_{\mu + \text{track}} <
-        120$~GeV.
+        muons. A definite requirement of $p_{T} > 26$~GeV is applied
+        along with demanding $|\eta| < 2.1$. The muons are also
+        required to meet a tight ID requirement which demands a high-quality
+        reconstructed track and a global track fit with a $\chi^2$ fit
+        requirement. Similarly, a simple acceptance selection is also applied to
+        the tracks in an event.  Here we also require $p_{T} > 26$~GeV and
+        $|\eta| < 2.1$. The pseudorapidity requirements ensure that the muons
+        and tracks are within good acceptance of the inner tracking system.
+        Lastly, all muon-track pairs must be within a standard invariant mass
+        range around the $Z$ boson. We call for the invariant mass to be in the
+        range $60 < m_{\mu + \text{track}} < 120$~GeV.
 
     \subsection{Quality Selection}
 
         \begin{figure}[ht]
             \begin{center}
-                \includegraphics[scale=0.5]{CMS_rz_Cutaway.png}
+                \includegraphics[scale=0.5]{Figures/CMS_rz_Cutaway.png}
             \end{center}
             \caption{An $r-z$ plane view of the CMS detector\cite{Abbiendi} allowing the
             various gaps between the calorimeters and muon chamber to be seen in
@@ -397,58 +404,66 @@
         \end{figure}
 
         The next level of selection applied to the events that pass the basic
-        acceptance selection is a quality selection. All tracks are subject
-        to an isolation condition: the sum of all the other transverse momentum
+        acceptance selection is a quality selection. All tracks are subject to
+        an isolation condition: the sum of all the other transverse momentum
         within an angular separation of $\Delta R < 0.3$ of the track must be
-        less than $10$\% of said track's $p_{T}$.\footnote{$\Delta R$
-        is the total angular separation between two objects and is defined as
-        $\Delta R \equiv \sqrt{(\eta_1 - \eta_2)^2 + (\phi_1 - \phi_2)^2}$} In
-        addition, the tracks in each event are subjected to a $\chi^{2}$
-        requirement for their respective track fits. We veto for $\chi^{2} > 60$
-        and also for $\chi^{2} < 4$.
+        less than $10$\% of said track's $p_{T}$.\footnote{$\Delta R$ is the
+        total angular separation between two objects in $\eta$-$\phi$ space and
+        is defined as $\Delta R \equiv \sqrt{(\eta_1 - \eta_2)^2 + (\phi_1 -
+        \phi_2)^2}$} In addition, the tracks in each event are subjected to a
+        $\chi^{2}$ requirement for their respective track fits. We veto for
+        $\chi^{2} > 60$ and also for $\chi^{2} < 4$. Finally, the track's number
+        of hits combined with its number of missing hits must be greater than or
+        equal to 12. This gets rid of tracks with a low number of hits and large
+        $d_z$ but a $\chi^2$ value that passes the veto above.
 
-        \begin{figure}[ht]
-            \begin{center}
-                \includegraphics[width=0.5\textwidth]{acceptSelection_trkfitChi2.png}
-            \end{center}
-            \caption{This plot shows the distribution of $\chi^2$ for the fit of
-            the tracks in an event. All events have gone through a basic
-            acceptance. Extremely small $\chi^2$ values corresponds to fits with
-            very large errors and the corresponding tracks are rejected.}
+        \begin{figure}[ht]%
+            \centering
+            \subfloat[$\chi^2$ of track fit]{{\includegraphics[width=0.45\textwidth]{Figures/acceptSelection_trkfitChi2.pdf} }}%
+            \subfloat[Track $d_z$]{{\includegraphics[width=0.45\textwidth]{Figures/acceptSelection_trkDZ.pdf} }}%
+            \caption{On the left is the distribution of $\chi^2$ for the fit of
+            the tracks in an event. Extremely small $\chi^2$ values corresponds
+            to fits with very large errors and the corresponding tracks are
+            rejected. In the right panel is the $d_z$ of the tracks. The
+            non-Gaussian tails are eliminated by putting a requirement on the
+            number of tracker hits plus missing hits. All events have gone
+            through a basic acceptance.}
             \label{fig:chi2}
         \end{figure}
 
-        The silicon tracking subdetector and muon system are not continuous
-        objects, they are pieced together and therefore there are gaps where
-        active sections meet. If muons and associated tracks fall with these
-        regions they can lose hits and possible get lost. These effects can
-        result in tracks which appear to be missing hits and fail to match a
-        muon to a track; possibly faking the signal process. To help curtail
-        these possibilities from happening three regions in $\eta$-space are
-        vetoed for all tracks and muons. One such region is where the endcap
+        The second part of the quality selection takes into account the detector
+        geometry. The silicon tracking subdetector and muon system are not
+        continuous objects, they are pieced together and therefore there are
+        gaps where active sections meet. If muons and associated tracks fall
+        with these regions they can lose hits and possibly get lost. These
+        effects can result in tracks which appear to be missing hits and fail to
+        match a muon to a track; thereby faking the signal process. To help
+        curtail these possibilities from happening three regions in $\eta$-space
+        are vetoed for all tracks and muons. One such region is where the endcap
         and barrel portions of the ECal and HCal meet and form a gap which
         occurs from $1.42 < |\eta| < 1.65$. A second region is at low $|\eta|$
         where there is a gap between the zeroth and first wheel of the muon
         chambers. Based on the location and orientation of this gap with respect
         to the interaction point, muons at $0.15 < |\eta| < 0.35$ see this gap
-        as an extended amount of dead space thus this region is vetoed.
-        Finally, the region $1.55 < |\eta| < 1.85$ is vetoed due to gaps in the
-        muon chamber layers that all line up and the first layer of CSCs being
-        discontinuous in $z$.
+        as an extended amount of dead space thus this region is vetoed for
+        inefficiency.  Finally, the region $1.55 < |\eta| < 1.85$ is vetoed due
+        to gaps in the muon chamber layers that all line up and the first layer
+        of CSCs being discontinuous in $z$.
 
     \subsection{Signal Selection}
 
-        At this point we have subset of events that contain a well-isolated, and
-        well-fit track and we now make selections to define a signal event. At
-        this point we require for there to be a track that does not match to a
-        muon. The matching criteria between a muon and a track is defined by the
-        $\Delta R < 0.002$ between them. Of the events that pass this selection,
-        they are then required to have low energy deposition in a cone of
-        $\Delta R < 0.3$ in the direction of the candidate track. Specifically
-        in the HCal and ECal there should be no more than 3~GeV in each
-        calorimeter. Finally we select for tracks with missing hits in the outer
-        silicon tracker corresponding to the muon deflecting off of its initial
-        path.
+        At this point we have a subset of events that contain a well-isolated,
+        and well-fit track and we now make final selections to define a signal
+        event.  In an event we now require there to be exactly one track that
+        does not match to a muon. The matching criteria between a muon and a
+        track is defined by the $\Delta R < 0.002$ between them. Of the events
+        that pass this selection, they are then required to have low energy
+        deposition in a cone of $\Delta R < 0.3$ in the direction of the
+        candidate track. Specifically in the HCal and ECal there should be no
+        more than 3~GeV in each calorimeter. On average a muon deposits 2~GeV in
+        the HCal and it is expected that the muon will fall within a cone of
+        $\Delta R < 0.3$.  Finally we select for tracks with missing hits in the
+        outer silicon tracker.
 
 \section{Results}
 
@@ -456,45 +471,30 @@
     Carlo sample we obtain the following cutflow tables where the signal track
     is missing 1, 2 and 3 hits in the tracker.
 
-    \makebetter{FINAL-ISH TABLE}
+    \makebetter{STILL NOT FINAL TABLE}
 
     \begin{table}[htbp] 
     \begin{center} 
     \begin{tabular}{ll}
-    $\mathrm{L} = 2.613\,\mathrm{fb}^{-1}$                                                                                                                                                                                                               & \multicolumn{1}{r}{Event yield}   \\ 
+    $\mathrm{L} = 2.613\,\mathrm{fb}^{-1}$                                                                                                                                                                                                     & \multicolumn{1}{r}{Event yield}   \\ 
     \hline 
-    Skimmed single muon events                                                                                                                                                                                                                           & 1107215 $\pm$ 1050.0              \\ 
-%    >= 1 muons with$\ p_{T}$ > 26                                                                                                                                                                                                                        & 1079212 $\pm$ 1040.0              \\ 
-%    >= 1 muons with |$\eta$| < 2.1                                                                                                                                                                                                                       & 1079212 $\pm$ 1040.0              \\ 
-%    >= 1 tracks with$\ p_{T}$ > 26                                                                                                                                                                                                                       & 1079207 $\pm$ 1040.0              \\ 
-%    >= 1 tracks with |$\eta$| < 2.1                                                                                                                                                                                                                      & 1079206 $\pm$ 1040.0              \\ 
-%    >= 1 muon-tracks with sqrt ((muon.energy + track.energyOfMuon) * (muon.energy + track.energyOfMuon) - (muon.px + track.px) * (muon.px + track.px) - (muon.py + track.py) * (muon.py + track.py) - (muon.pz + track.pz) * (muon.pz + track.pz)) < 120 & 1079206 $\pm$ 1040.0              \\ 
-%    >= 1 muon-tracks with sqrt ((muon.energy + track.energyOfMuon) * (muon.energy + track.energyOfMuon) - (muon.px + track.px) * (muon.px + track.px) - (muon.py + track.py) * (muon.py + track.py) - (muon.pz + track.pz) * (muon.pz + track.pz)) > 60  & 564894 $\pm$ 752.0                \\ 
-    Basic Acceptance                                    & 564894 $\pm$ 752.0                \\
-%    >= 1 tracks with (trackIsoNoPUDRp3 /$\ p_{T}$) < 0.1                                                                                                                                                                                                 & 564427 $\pm$ 751.0                \\ 
-%    >= 1 tracks with |$\eta$| < 1.42\ \vert\ |$\eta$| > 1.65                                                                                                                                                                                             & 554333 $\pm$ 745.0                \\ 
-%    >= 1 tracks with |$\eta$| < 0.15\ \vert\ |$\eta$| > 0.35                                                                                                                                                                                             & 522933 $\pm$ 723.0                \\ 
-%    >= 1 tracks with |$\eta$| < 1.55\ \vert\ |$\eta$| > 1.85                                                                                                                                                                                             & 501241 $\pm$ 708.0                \\ 
-%    >= 1 tracks with chi2 > 4 \& chi2 < 60                                                                                                                                                                                                               & 492776 $\pm$ 702.0                \\ 
-%    >= 1 muons with |$\eta$| < 1.42\ \vert\ |$\eta$| > 1.65                                                                                                                                                                                              & 488032 $\pm$ 699.0                \\ 
-%    >= 1 muons with |$\eta$| < 0.15\ \vert\ |$\eta$| > 0.35                                                                                                                                                                                              & 482511 $\pm$ 695.0                \\ 
-%    >= 1 muons with |$\eta$| < 1.55\ \vert\ |$\eta$| > 1.85                                                                                                                                                                                              & 478761 $\pm$ 692.0                \\ 
-    Quality Selection                                   & 478761 $\pm$ 692.0                \\
-%    == 1 eventvariables with muTrkMatches == 1                                                                                                                                                                                                           & 35521 $\pm$ 188.0                 \\ 
-%    < 2 tracks with$\ p_{T}$ > 0                                                                                                                                                                                                                         & 34634 $\pm$ 186.0                 \\ 
-%    >= 1 tracks with caloHadDRp3 < 3.0                                                                                                                                                                                                                   & 14408 $\pm$ 120.0                 \\ 
-%    >= 1 tracks with caloEMDRp3 < 3.0                                                                                                                                                                                                                    & 11635 $\pm$ 108.0                 \\ 
-    Signal Selection                                    & 11635 $\pm$ 108.0                 \\
+    Pre-skimmed, single muon events           & 1557127 $\pm$ 1250.0              \\ 
     \\
-    $\geq$ 1 tracks with 1 missing hit                  & 401 $\pm$ 20.0                    \\ 
-    $\geq$ 1 tracks with 2 missing hit                  & 124 $\pm$ 11.1                    \\ 
-    $\geq$ 1 tracks with 3 missing hit                  & 58 $\pm$ 7.62                    \\ 
+    Basic Acceptance                          & 793874 $\pm$ 891.0                \\
+    Quality Selection                         & 516670 $\pm$ 719.0                \\
+    Signal Selection                          & 11250 $\pm$ 106.0                 \\
+    \\
+    $\geq$ 1 tracks with 1 missing hit        & 313 $\pm$ 17.7                    \\ 
+    $\geq$ 1 tracks with 2 missing hit        & 11 $\pm$ 3.32                    \\ 
+    $\geq$ 1 tracks with 3 missing hit        & 6 $\pm$ 2.45                    \\ 
 
     \hline 
     \end{tabular} 
     \end{center} 
-    \caption{An example cutflow table with the three major acceptance categories
-    and individual missing hits requirements.}
+    \caption{An example cutflow table with the three major acceptance and
+    selection categories and the individual missing hits requirements. Note that
+    the 1, 2 and 3 missing hits are not cumulative of one another, they are each 
+    exclusive subsets of the signal selection.}
     \end{table} 
 
 \section{Future Considerations}
@@ -524,11 +524,10 @@
     theories for dark matter. In this paper we have made a preliminary
     quantification of the background for a light dark matter yielding process
     occurring at the LHC. With our basic acceptance, quality selection and
-    final signal selection we expect a background of $58 \pm 7.62$ events when
+    final signal selection we expect a background of $6 \pm 2.45$ events when
     requiring three missing hits.
 
 \bibliography{JCH_Oral_Paper}{}
 \bibliographystyle{plain}
 
-\end{fmffile}
 \end{document}
